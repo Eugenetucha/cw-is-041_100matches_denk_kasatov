@@ -135,5 +135,19 @@ def button_react():
             leader_board()
             pygame.display.flip()
 
+def win_player():
+    if count == 1:
+        ballas22 = pygame.Rect(1, 1, 2000, 2500)
+        pygame.draw.rect(gameScreen, (255, 255, 255), ballas22)
+        textsurface3 = myfont.render('Winner: Player ', False, (0, 0, 0))
+        gameScreen.blit(textsurface3, (100, 50))
+        textsurface14 = myfont.render(str(current_player), False, (0, 0, 0))
+        gameScreen.blit(textsurface14, (260, 50))
+    if count <= 0:
+        ballas233 = pygame.Rect(1, 1, 2000, 2500)
+        pygame.draw.rect(gameScreen, (255, 255, 255), ballas233)
+        textsurface3 = myfont.render('draw', False, (0, 0, 0))
+        gameScreen.blit(textsurface3, (200, 50))
+
 if __name__ == '__game_starting__':
     start_game()
