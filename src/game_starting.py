@@ -85,6 +85,51 @@ def start_game():
             if event.type == pygame.QUIT:
                 runGame = False
                 pygame.quit()
+def button_react():
+    global count, step
+    while True:
+        pygame.init()
+        pygame.font.init()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                switch_to_next_player()
+                mouse_pos = event.pos
+                if button_1.collidepoint(mouse_pos):
+                    count -= 1
+                if button_2.collidepoint(mouse_pos):
+                    count -= 2
+                if button_3.collidepoint(mouse_pos):
+                    count -= 3
+                if button_4.collidepoint(mouse_pos):
+                    count -= 4
+                if button_5.collidepoint(mouse_pos):
+                    count -= 5
+                if button_6.collidepoint(mouse_pos):
+                    count -= 6
+                if button_7.collidepoint(mouse_pos):
+                    count -= 7
+                if button_8.collidepoint(mouse_pos):
+                    count -= 8
+                if button_9.collidepoint(mouse_pos):
+                    count -= 9
+                if button_10.collidepoint(mouse_pos):
+                    count -= 10
+
+            textsurface6 = myfont.render('Выберите число от 1 до 10', True, (0, 0, 0))
+            gameScreen.blit(textsurface6, (100, 100))
+            ballas9 = pygame.Rect(180, 50, 100, 40)
+            pygame.draw.rect(gameScreen, (255, 255, 255), ballas9)
+            textsurface10 = myfont.render(str(current_player), False, (0, 0, 0))
+            gameScreen.blit(textsurface10, (180, 50))
+            ballas8 = pygame.Rect(100, 120, 200, 70)
+            pygame.draw.rect(gameScreen, (255, 255, 255), ballas8)
+            textsurface = myfont.render(str(count), True, (0, 0, 0))
+            gameScreen.blit(textsurface, (100, 120))
+            win_player()
+            leader_board()
+            pygame.display.flip()
 
 if __name__ == '__game_starting__':
     start_game()
