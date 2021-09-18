@@ -85,6 +85,10 @@ def start_game():
             if event.type == pygame.QUIT:
                 runGame = False
                 pygame.quit()
+def switch_to_next_player():
+    global current_player
+    current_player = players_list[0] if current_player is players_list[1] else \
+        players_list[1]
 def button_react():
     global count, step
     while True:
