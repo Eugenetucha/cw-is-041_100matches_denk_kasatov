@@ -62,6 +62,17 @@ def early_dysplay():
                     game_starting.start_game()
                 if button2.collidepoint(mouse_pos):
                     pygame.quit()
+def list_crnt():
+    global crnt_player1
+    global crnt_player2
+    word = open("leader.txt", 'r').readlines()
+    crnt_player1 = 0
+    crnt_player2 = 0
+    for c in word:
+        if c == "a":
+            crnt_player1 += 1
+        if c == "b":
+            crnt_player2 += 1
 
 if __name__ == '__main__':
     early_dysplay()
