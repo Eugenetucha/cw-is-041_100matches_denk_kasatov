@@ -148,6 +148,14 @@ def win_player():
         pygame.draw.rect(gameScreen, (255, 255, 255), ballas233)
         textsurface3 = myfont.render('draw', False, (0, 0, 0))
         gameScreen.blit(textsurface3, (200, 50))
+def leader_board():
+    if current_player == "1":
+        with open("leader.txt", "a") as board:
+            board.writelines("a")
+
+    if current_player == "2":
+        with open("leader.txt", "a") as board:
+            board.writelines("b")
 
 if __name__ == '__game_starting__':
     start_game()
