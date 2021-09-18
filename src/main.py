@@ -47,6 +47,21 @@ def early_dysplay():
             if event.type == pygame.QUIT:
                 runGame = False
     pygame.quit()
+    def pressed():
+    while True:
+        pygame.init()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return False
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+
+                if button1.collidepoint(mouse_pos):
+                    pygame.quit()
+                    game_starting.start_game()
+                if button2.collidepoint(mouse_pos):
+                    pygame.quit()
 
 if __name__ == '__main__':
     early_dysplay()
