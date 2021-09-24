@@ -47,7 +47,7 @@ def early_dysplay():
             if event.type == pygame.QUIT:
                 runGame = False
     pygame.quit()
-    def pressed():
+def pressed():
     while True:
         pygame.init()
         for event in pygame.event.get():
