@@ -1,6 +1,6 @@
 import pygame
 import os
-import game_starting
+import src.game_starting
 
 
 gameScreen = pygame.display.set_mode((400, 300))
